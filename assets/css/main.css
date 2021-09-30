@@ -28,17 +28,13 @@ body.sticky-bottom-footer { padding-bottom: 0; }
 /******************************************************************************* Styles for the base elements of the theme. */
 p, h1, h2, h3, h4, h5, h6, em, div, span, strong { color: var(--global-text-color); }
 
+.emph { background: var(--global-bg-color); color: var(--global-theme-color); }
+
 a, table.table a { color: var(--global-theme-color); }
 
 a:hover, table.table a:hover { color: var(--global-theme-color); text-decoration: underline; }
 
 a:hover:after :not(.nav-item.dropdown), table.table a:hover:after :not(.nav-item.dropdown) { width: 100%; }
-
-.emph { background: var(--global-bg-color); color: var(--global-theme-color); }
-
-.umd-badge abbr { display: inline-block; width: 80px; background-color: var(--global-theme-color); }
-
-.umd-badge abbr span { background-color: transparent; color: var(--global-bg-color); }
 
 blockquote { background: var(--global-bg-color); border-left: 2px solid var(--global-theme-color); margin: 1.5em 10px; padding: 0.5em 10px; font-size: 1.2rem; }
 
