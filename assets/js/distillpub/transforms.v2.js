@@ -286,7 +286,7 @@
     // 'Olah, Chris and Carter, Shan',
     get bibtexAuthors() {
       return this.authors.map(author => {
-        return author.lastName + ', ' + author.firstName;
+        return author.firstName + ' ' + author.lastName;
       }).join(' and ');
     }
 
@@ -689,7 +689,8 @@
                       this.entry(d);
                   }
                   this.match("}");
-              }        };
+              }        
+            };
       }    
       exports.toJSON = function(bibtex) {
           var b = new BibtexParser();
@@ -751,8 +752,8 @@
     }
     return bibliography;
   }
-
   function serializeFrontmatterToBibtex(frontMatter) {
+    console.log('Frontmatter:', frontMatter); // Debug statement
     return `@article{${frontMatter.slug},
   author = {${frontMatter.bibtexAuthors}},
   title = {${frontMatter.title}},

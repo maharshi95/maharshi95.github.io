@@ -283,7 +283,7 @@
     // 'Olah, Chris and Carter, Shan',
     get bibtexAuthors() {
       return this.authors.map(author => {
-        return author.lastName + ', ' + author.firstName;
+        return author.firstName + ' ' + author.lastName;
       }).join(' and ');
     }
 
