@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-02-09T13:47:23-05:00</updated><id>/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-02-09T13:56:42-05:00</updated><id>/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">The Apology Gap: Same Words, Different Fears</title><link href="/blog/2026/apology-gap/" rel="alternate" type="text/html" title="The Apology Gap: Same Words, Different Fears" /><published>2026-02-08T09:00:00-05:00</published><updated>2026-02-08T09:00:00-05:00</updated><id>/blog/2026/apology-gap</id><content type="html" xml:base="/blog/2026/apology-gap/"><![CDATA[<p><em>What your brain is actually computing when an apology doesn’t land</em></p>
 
 <hr />
@@ -556,6 +556,18 @@ They optimize for different regrets <a href="#ref10">[10]</a>.</p>
 
 <p>A likelihood ratio of 1 means: <em>this evidence doesn’t move your beliefs at all.</em></p>
 
+<p><strong>How LR actually updates your belief:</strong></p>
+
+<p>Bayes’ theorem has a simpler form that makes this concrete. Instead of probabilities, think in <strong>odds</strong>:</p>
+
+\[\underbrace{\frac{P(U \mid A)}{P(\neg U \mid A)}}_{\text{Posterior odds}} = \underbrace{\frac{P(U)}{P(\neg U)}}_{\text{Prior odds}} \times \underbrace{\text{LR}}_{\text{Evidence strength}}\]
+
+<p>In plain English: <strong>your updated belief = your old belief × the strength of the evidence.</strong></p>
+
+<p>If the LR is 1, you multiply by 1 — nothing changes. If it’s 5, your odds quintuple. If it’s 0.5, they halve. That’s it. That’s the whole machine.</p>
+
+<p><em>(To convert back to probability: \(P = \frac{\text{odds}}{1 + \text{odds}}\). So odds of 3:1 → probability of 75%.)</em></p>
+
 <table>
   <thead>
     <tr>
@@ -594,11 +606,13 @@ They optimize for different regrets <a href="#ref10">[10]</a>.</p>
 
 <p>Let’s say your prior on Jamie is generous: 60% belief they understand (\(P(U) = 0.6\)). Jamie’s generally thoughtful, after all.</p>
 
-<p>Jamie gives a formulaic sorry after the dinner incident. \(\text{LR} \approx 1.0\). Posterior: still 60%. The apology was perfectly nice and perfectly uninformative.</p>
+<p>In odds: \(\frac{0.6}{0.4} = 1.5\) (you believe understanding is 1.5× more likely than not).</p>
 
-<p>A month later, similar friction, same formulaic sorry. \(\text{LR} \approx 0.8\) this time—slight evidence against understanding, because now it’s a pattern. Posterior drifts to ~55%.</p>
+<p>Jamie gives a formulaic sorry after the dinner incident. \(\text{LR} \approx 1.0\). Updated odds: \(1.5 \times 1.0 = 1.5\). Posterior: still 60%. The apology was perfectly nice and perfectly uninformative.</p>
 
-<p>Then, three weeks after that, Jamie does something unprompted. They bring up the dinner thing—not because you asked, but because they’d been thinking about it. \(\text{LR} \approx 8\). Posterior jumps to ~91%.</p>
+<p>A month later, similar friction, same formulaic sorry. \(\text{LR} \approx 0.8\) this time—slight evidence against understanding, because now it’s a pattern. Updated odds: \(1.5 \times 0.8 = 1.2\). Posterior: \(\frac{1.2}{2.2} \approx 55\%\).</p>
+
+<p>Then, three weeks after that, Jamie does something unprompted. They bring up the dinner thing—not because you asked, but because they’d been thinking about it. \(\text{LR} \approx 8\). Updated odds: \(1.2 \times 8 = 9.6\). Posterior: \(\frac{9.6}{10.6} \approx 91\%\).</p>
 
 <p><em>That’s</em> why the unprompted follow-up three weeks later meant more than both apologies combined. Your brain knew this. Now you know why your brain knew this.</p>
 
