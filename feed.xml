@@ -1,387 +1,832 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-05-01T20:17:51-04:00</updated><id>/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">a post with TikZJax</title><link href="/blog/2023/tikzjax/" rel="alternate" type="text/html" title="a post with TikZJax" /><published>2023-12-12T17:25:00-05:00</published><updated>2023-12-12T17:25:00-05:00</updated><id>/blog/2023/tikzjax</id><content type="html" xml:base="/blog/2023/tikzjax/"><![CDATA[<p>This is an example post with TikZ code. TikZJax converts script tags (containing TikZ code) into SVGs.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-02-09T05:16:37-05:00</updated><id>/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">The Apology Gap: Why One Person Hears ‘I Care’ and the Other Hears Nothing</title><link href="/blog/2026/apology-gap/" rel="alternate" type="text/html" title="The Apology Gap: Why One Person Hears ‘I Care’ and the Other Hears Nothing" /><published>2026-02-08T09:00:00-05:00</published><updated>2026-02-08T09:00:00-05:00</updated><id>/blog/2026/apology-gap</id><content type="html" xml:base="/blog/2026/apology-gap/"><![CDATA[<p><em>And What You’re Actually Evaluating When That Happens</em></p>
 
-<script type="text/tikz">
-\begin{tikzpicture}
-    \draw[red,fill=black!60!red] (0,0) circle [radius=1.5];
-    \draw[green,fill=black!60!green] (0,0) circle [x radius=1.5cm, y radius=10mm];
-    \draw[blue,fill=black!60!blue] (0,0) circle [x radius=1cm, y radius=5mm, rotate=30];
-\end{tikzpicture}
-</script>]]></content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="diagrams" /><summary type="html"><![CDATA[this is what included TikZ code could look like]]></summary></entry><entry><title type="html">a post with bibliography</title><link href="/blog/2023/post-bibliography/" rel="alternate" type="text/html" title="a post with bibliography" /><published>2023-07-12T09:56:00-04:00</published><updated>2023-07-12T09:56:00-04:00</updated><id>/blog/2023/post-bibliography</id><content type="html" xml:base="/blog/2023/post-bibliography/"><![CDATA[<p>This post shows how to add bibliography to simple blog posts. If you would like something more academic, check the <a href="/blog/2021/distill/">distill style post</a>.</p>]]></content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="bib" /><summary type="html"><![CDATA[an example of a blog post with bibliography]]></summary></entry><entry><title type="html">a post with jupyter notebook</title><link href="/blog/2023/jupyter-notebook/" rel="alternate" type="text/html" title="a post with jupyter notebook" /><published>2023-07-04T08:57:00-04:00</published><updated>2023-07-04T08:57:00-04:00</updated><id>/blog/2023/jupyter-notebook</id><content type="html" xml:base="/blog/2023/jupyter-notebook/"><![CDATA[<p>To include a jupyter notebook in a post, you can use the following code:</p>
+<hr />
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{::nomarkdown}
-{% assign jupyter_path = "assets/jupyter/blog.ipynb" | relative_url %}
-{% capture notebook_exists %}{% file_exists assets/jupyter/blog.ipynb %}{% endcapture %}
-{% if notebook_exists == "true" %}
-    {% jupyter_notebook jupyter_path %}
-{% else %}
-    <span class="nt">&lt;p&gt;</span>Sorry, the notebook you are looking for does not exist.<span class="nt">&lt;/p&gt;</span>
-{% endif %}
-{:/nomarkdown}
-</code></pre></div></div>
+<p>Someone says “I’m sorry,” and instead of feeling better, you feel… <strong>off.</strong></p>
 
-<p>Let’s break it down: this is possible thanks to <a href="https://github.com/red-data-tools/jekyll-jupyter-notebook">Jekyll Jupyter Notebook plugin</a> that allows you to embed jupyter notebooks in your posts. It basically calls <a href="https://nbconvert.readthedocs.io/en/latest/usage.html#convert-html"><code class="language-plaintext highlighter-rouge">jupyter nbconvert --to html</code></a> to convert the notebook to an html page and then includes it in the post. Since <a href="https://jekyllrb.com/docs/configuration/markdown/">Kramdown</a> is the default Markdown renderer for Jekyll, we need to surround the call to the plugin with the <a href="https://kramdown.gettalong.org/syntax.html#extensions">::nomarkdown</a> tag so that it stops processing this part with Kramdown and outputs the content as-is.</p>
+<p>Not angrier.<br />
+Not more hurt.<br />
+Just <em>unconvinced</em>—like a box was checked, but not <em>your</em> box.</p>
 
-<p>The plugin takes as input the path to the notebook, but it assumes the file exists. If you want to check if the file exists before calling the plugin, you can use the <code class="language-plaintext highlighter-rouge">file_exists</code> filter. This avoids getting a 404 error from the plugin and ending up displaying the main page inside of it instead. If the file does not exist, you can output a message to the user. The code displayed above outputs the following:</p>
+<p>Most people recognize this feeling immediately. Fewer can explain it.<br />
+And almost everyone has, at some point, been told: <em>“They apologized—what more do you want?”</em></p>
 
+<p>That question turns out to be doing a lot of hidden work.</p>
 
-
-
-    <div
-  class="jupyter-notebook"
-  style="position: relative; width: 100%; margin: 0 auto;">
-  <div class="jupyter-notebook-iframe-container">
-    <iframe
-      src="/assets/jupyter/blog.ipynb.html"
-      style="position: absolute; top: 0; left: 0; border-style: none;"
-      width="100%"
-      height="100%"
-      onload="this.parentElement.style.paddingBottom = (this.contentWindow.document.documentElement.scrollHeight + 10) + 'px'"></iframe>
-  </div>
-</div>
-
-
-
-<p>Note that the jupyter notebook supports both light and dark themes.</p>]]></content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="jupyter" /><summary type="html"><![CDATA[an example of a blog post with jupyter notebook]]></summary></entry><entry><title type="html">a post with custom blockquotes</title><link href="/blog/2023/custom-blockquotes/" rel="alternate" type="text/html" title="a post with custom blockquotes" /><published>2023-05-12T15:53:00-04:00</published><updated>2023-05-12T15:53:00-04:00</updated><id>/blog/2023/custom-blockquotes</id><content type="html" xml:base="/blog/2023/custom-blockquotes/"><![CDATA[<p>This post shows how to add custom styles for blockquotes. Based on <a href="https://github.com/sighingnow/jekyll-gitbook">jekyll-gitbook</a> implementation.</p>
-
-<p>We decided to support the same custom blockquotes as in <a href="https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html">jekyll-gitbook</a>, which are also found in a lot of other sites’ styles. The styles definitions can be found on the <a href="https://github.com/alshedivat/al-folio/blob/master/_sass/_base.scss">_base.scss</a> file, more specifically:</p>
-
-<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Tips, warnings, and dangers */</span>
-<span class="nc">.post</span> <span class="nc">.post-content</span> <span class="nt">blockquote</span> <span class="p">{</span>
-    <span class="k">&amp;</span><span class="nc">.block-tip</span> <span class="p">{</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block</span><span class="p">);</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block-bg</span><span class="p">);</span>
-
-    <span class="nt">p</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block-text</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block-title</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="k">&amp;</span><span class="nc">.block-warning</span> <span class="p">{</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block</span><span class="p">);</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block-bg</span><span class="p">);</span>
-
-    <span class="nt">p</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block-text</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block-title</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="k">&amp;</span><span class="nc">.block-danger</span> <span class="p">{</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block</span><span class="p">);</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block-bg</span><span class="p">);</span>
-
-    <span class="nt">p</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block-text</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block-title</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>A regular blockquote can be used as following:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; This is a regular blockquote</span>
-<span class="gt">&gt; and it can be used as usual</span>
-</code></pre></div></div>
-
-<blockquote>
-  <p>This is a regular blockquote
-and it can be used as usual</p>
-</blockquote>
-
-<p>These custom styles can be used by adding the specific class to the blockquote, as follows:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### TIP</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; A tip can be used when you want to give advice</span>
-<span class="gt">&gt; related to a certain content.</span>
-{: .block-tip }
-</code></pre></div></div>
+<hr />
 
 <blockquote class="block-tip">
-  <h5 id="tip">TIP</h5>
+  <h5 id="tldr"><strong>TL;DR</strong></h5>
 
-  <p>A tip can be used when you want to give advice
-related to a certain content.</p>
+  <p><em>When an apology feels empty, it’s usually because it answered a different question than the one you were asking.</em></p>
 </blockquote>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### WARNING</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; This is a warning, and thus should</span>
-<span class="gt">&gt; be used when you want to warn the user</span>
-{: .block-warning }
-</code></pre></div></div>
+<hr />
 
-<blockquote class="block-warning">
-  <h5 id="warning">WARNING</h5>
+<h2 id="what-your-brain-is-actually-asking">What Your Brain Is Actually Asking</h2>
 
-  <p>This is a warning, and thus should
-be used when you want to warn the user</p>
+<p>On the surface, it sounds like people are judging sincerity. <em>Did they mean it? Was it genuine?</em></p>
+
+<p>But if you watch your own reactions carefully, that’s rarely what determines how an apology lands.</p>
+
+<p>What’s actually happening is closer to this:</p>
+
+<blockquote>
+  <p><em>Given this apology, what am I supposed to believe now?</em></p>
 </blockquote>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### DANGER</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; This is a danger zone, and thus should</span>
-<span class="gt">&gt; be used carefully</span>
-{: .block-danger }
-</code></pre></div></div>
+<p>Believe about whether they understand the harm.
+Whether this is likely to happen again.
+Whether the relationship feels stable or fragile.</p>
 
-<blockquote class="block-danger">
-  <h5 id="danger">DANGER</h5>
+<p>In other words, apologies aren’t just moral gestures (or attempts to get you to stop looking at them like that).</p>
 
-  <p>This is a danger zone, and thus should
-be used carefully</p>
-</blockquote>]]></content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="blockquotes" /><summary type="html"><![CDATA[an example of a blog post with custom blockquotes]]></summary></entry><entry><title type="html">a post with table of contents on a sidebar</title><link href="/blog/2023/sidebar-table-of-contents/" rel="alternate" type="text/html" title="a post with table of contents on a sidebar" /><published>2023-04-25T10:14:00-04:00</published><updated>2023-04-25T10:14:00-04:00</updated><id>/blog/2023/sidebar-table-of-contents</id><content type="html" xml:base="/blog/2023/sidebar-table-of-contents/"><![CDATA[<p>This post shows how to add a table of contents as a sidebar.</p>
+<p>They’re <strong>informational signals</strong>—probability estimates about future behavior. People use them, quietly and intuitively, to update expectations about what comes next.</p>
 
-<h2 id="adding-a-table-of-contents">Adding a Table of Contents</h2>
+<p>This isn’t cynicism.<br />
+It’s <strong>prediction.</strong></p>
 
-<p>To add a table of contents to a post as a sidebar, simply add</p>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">toc</span><span class="pi">:</span>
-  <span class="na">sidebar</span><span class="pi">:</span> <span class="s">left</span>
-</code></pre></div></div>
-<p>to the front matter of the post. The table of contents will be automatically generated from the headings in the post. If you wish to display the sidebar to the right, simply change <code class="language-plaintext highlighter-rouge">left</code> to <code class="language-plaintext highlighter-rouge">right</code>.</p>
+<p>Think of an apology like a weather forecast.</p>
 
-<h3 id="example-of-sub-heading-1">Example of Sub-Heading 1</h3>
+<p>“I’m sorry” doesn’t mean “it will never rain again.” It means “based on current conditions, there’s a reasonable chance I understand what went wrong.” Some apologies say <em>40% chance of understanding, clearing by tomorrow.</em> Others say <em>I didn’t see it before, but now I do—expect different conditions ahead.</em></p>
 
-<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>
+<p>Neither is a guarantee.<br />
+But <strong>one gives you more to work with.</strong></p>
 
-<h3 id="example-of-another-sub-heading-1">Example of another Sub-Heading 1</h3>
+<hr />
 
-<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>
+<blockquote class="block-tip">
+  <h5 id="tldr-1"><strong>TL;DR</strong></h5>
 
-<h2 data-toc-text="Customizing" id="customizing-your-table-of-contents">Customizing Your Table of Contents</h2>
+  <p><em>You’re not grading apologies on politeness. You’re using them to predict what happens next.</em></p>
+</blockquote>
 
-<p>If you want to learn more about how to customize the table of contents of your sidebar, you can check the <a href="https://afeld.github.io/bootstrap-toc/">bootstrap-toc</a> documentation. Notice that you can even customize the text of the heading that will be displayed on the sidebar.</p>
+<hr />
 
-<h3 id="example-of-sub-heading-2">Example of Sub-Heading 2</h3>
+<h2 id="the-part-we-rarely-say-out-loud-apologies-do-different-jobs">The Part We Rarely Say Out Loud: Apologies Do Different Jobs</h2>
 
-<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>
+<p>One reason this gets messy is that people don’t actually agree on what an apology is <em>for</em>.</p>
 
-<h3 id="example-of-another-sub-heading-2">Example of another Sub-Heading 2</h3>
+<p>There are at least two models in play.</p>
 
-<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>]]></content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="toc" /><category term="sidebar" /><summary type="html"><![CDATA[an example of a blog post with table of contents on a sidebar]]></summary></entry><entry><title type="html">a post with audios</title><link href="/blog/2023/audios/" rel="alternate" type="text/html" title="a post with audios" /><published>2023-04-25T06:25:00-04:00</published><updated>2023-04-25T06:25:00-04:00</updated><id>/blog/2023/audios</id><content type="html" xml:base="/blog/2023/audios/"><![CDATA[<p>This is an example post with audios. It supports local audio files.</p>
+<h3 id="the-signal-model">The Signal Model</h3>
+
+<p>In this model, an apology exists to mark a boundary. It says: <em>I acknowledge something went wrong. I recognize the norm. We can close this now.</em></p>
+
+<p>This kind of apology is efficient. It keeps social systems running. It prevents every small rupture from turning into a postmortem.</p>
+
+<p>It also quietly ends a lot of conversations.</p>
+
+<p>And often, that’s exactly what should happen.</p>
+
+<p>Not every rupture needs a postmortem. Not every misstep requires excavation. Signal apologies are the social immune system—they handle the routine infections so the body can function. Without them, every relationship would collapse under the weight of its own processing.</p>
+
+<p>The problem isn’t Signal apologies. It’s when they’re the <em>only</em> tool in the kit.</p>
+
+<h3 id="the-process-model">The Process Model</h3>
+
+<p>In this model, an apology is expected to reflect internal change. It says: <em>I understand something I didn’t before. My interpretation has updated. That update should show up later.</em></p>
+
+<p>This model prioritizes recalibration over closure.</p>
+
+<p>Both models are coherent.<br />
+Both are common.<br />
+Both use the same word: <em>sorry</em>.</p>
+
+<p>This is… <strong>inconvenient.</strong> (Or catastrophic, depending on your anxiety levels.)</p>
+
+<p>To see why, consider what an apology is technically supposed to do. Most frameworks break it into four components:</p>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
-
-  <audio src="/assets/audio/epicaly-short-113909.mp3" controls="" />
-
-</figure>
-
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <audio src="https://cdn.pixabay.com/download/audio/2022/06/25/audio_69a61cd6d6.mp3" controls="" />
-
-</figure>
-
-    </div>
-</div>
-<div class="caption">
-    A simple, elegant caption looks good between video rows, after each row, or doesn't have to be there at all.
-</div>]]></content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="audios" /><summary type="html"><![CDATA[this is what included audios could look like]]></summary></entry><entry><title type="html">a post with videos</title><link href="/blog/2023/videos/" rel="alternate" type="text/html" title="a post with videos" /><published>2023-04-24T17:01:00-04:00</published><updated>2023-04-24T17:01:00-04:00</updated><id>/blog/2023/videos</id><content type="html" xml:base="/blog/2023/videos/"><![CDATA[<p>This is an example post with videos. It supports local video files.</p>
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        
-
-<figure>
-
-  
-
-  <video src="/assets/video/pexels-engin-akyurt-6069112-960x540-30fps.mp4" class="img-fluid rounded z-depth-1" width="auto" height="auto" autoplay="" controls="" />
-
-  
-
-</figure>
-
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        
-
-<figure>
-
-  
-
-  <video src="/assets/video/pexels-engin-akyurt-6069112-960x540-30fps.mp4" class="img-fluid rounded z-depth-1" width="auto" height="auto" controls="" />
-
-  
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!-- See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and 
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images-->
+    
+      <source class="responsive-img-srcset" srcset="
+      /assets/img/apology-components-480.webp 480w,
+      /assets/img/apology-components-800.webp 800w,
+      /assets/img/apology-components-1400.webp 1400w,
+      " sizes="95vw" type="image/webp" />
+    
+    <img src="/assets/img/apology-components.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
 
 </figure>
 
     </div>
 </div>
-<div class="caption">
-    A simple, elegant caption looks good between video rows, after each row, or doesn't have to be there at all.
-</div>
-
-<p>It does also support embedding videos from different sources. Here are some examples:</p>
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        
-
-<figure>
-
-  
-
-  <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" class="img-fluid rounded z-depth-1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" width="auto" height="auto" />
-
-  
-
-</figure>
-
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        
-
-<figure>
-
-  
-
-  <iframe src="https://player.vimeo.com/video/524933864?h=1ac4fd9fb4&amp;title=0&amp;byline=0&amp;portrait=0" class="img-fluid rounded z-depth-1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" width="auto" height="auto" />
-
-  
-
-</figure>
-
-    </div>
-</div>]]></content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="videos" /><summary type="html"><![CDATA[this is what included videos could look like]]></summary></entry><entry><title type="html">displaying beautiful tables with Bootstrap Tables</title><link href="/blog/2023/tables/" rel="alternate" type="text/html" title="displaying beautiful tables with Bootstrap Tables" /><published>2023-03-20T14:37:00-04:00</published><updated>2023-03-20T14:37:00-04:00</updated><id>/blog/2023/tables</id><content type="html" xml:base="/blog/2023/tables/"><![CDATA[<p>Using markdown to display tables is easy. Just use the following syntax:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Left aligned | Center aligned | Right aligned |
-| :----------- | :------------: | ------------: |
-| Left 1       | center 1       | right 1       |
-| Left 2       | center 2       | right 2       |
-| Left 3       | center 3       | right 3       |
-</code></pre></div></div>
-
-<p>That will generate:</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: left">Left aligned</th>
-      <th style="text-align: center">Center aligned</th>
-      <th style="text-align: right">Right aligned</th>
+      <th style="text-align: left">Component</th>
+      <th style="text-align: left">What It Says</th>
+      <th style="text-align: center">Signal Apology</th>
+      <th style="text-align: center">Process Apology</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left">Left 1</td>
-      <td style="text-align: center">center 1</td>
-      <td style="text-align: right">right 1</td>
+      <td style="text-align: left"><strong>Acknowledge</strong></td>
+      <td style="text-align: left">“Something I did affected you negatively.”</td>
+      <td style="text-align: center">✓</td>
+      <td style="text-align: center">✓</td>
     </tr>
     <tr>
-      <td style="text-align: left">Left 2</td>
-      <td style="text-align: center">center 2</td>
-      <td style="text-align: right">right 2</td>
+      <td style="text-align: left"><strong>Accept Responsibility</strong></td>
+      <td style="text-align: left">“I did it. Not the weather. Not your tone.”</td>
+      <td style="text-align: center">✓</td>
+      <td style="text-align: center">✓</td>
     </tr>
     <tr>
-      <td style="text-align: left">Left 3</td>
-      <td style="text-align: center">center 3</td>
-      <td style="text-align: right">right 3</td>
+      <td style="text-align: left"><strong>Express Remorse</strong></td>
+      <td style="text-align: left">“I feel bad about that impact.”</td>
+      <td style="text-align: center">~</td>
+      <td style="text-align: center">✓</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Commit to Change</strong></td>
+      <td style="text-align: left">“Future behavior should differ.”</td>
+      <td style="text-align: center">~</td>
+      <td style="text-align: center">✓</td>
     </tr>
   </tbody>
 </table>
 
 <p></p>
 
-<p>It is also possible to use HTML to display tables. For example, the following HTML code will display a table with <a href="https://bootstrap-table.com/">Bootstrap Table</a>, loaded from a JSON file:</p>
+<p>Signal apologies tend to hit (1) and (2)—enough to mark the transaction complete. (The relational equivalent of marking an email as ‘read’.) Process apologies are expected to deliver all four, with (3) and (4) doing the heavy lifting.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table</span>
-  <span class="na">id=</span><span class="s">"table"</span>
-  <span class="na">data-toggle=</span><span class="s">"table"</span>
-  <span class="na">data-url=</span><span class="s">"{{ '/assets/json/table_data.json' | relative_url }}"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;thead&gt;</span>
-    <span class="nt">&lt;tr&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"id"</span><span class="nt">&gt;</span>ID<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"name"</span><span class="nt">&gt;</span>Item Name<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"price"</span><span class="nt">&gt;</span>Item Price<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;/thead&gt;</span>
-<span class="nt">&lt;/table&gt;</span>
-</code></pre></div></div>
+<p>Think of it like legal settlements. They don’t prove moral enlightenment; they stop the bleeding. Signal apologies work the same way. That’s not a bug—it’s a coordination feature. But it optimizes for social stability, not relational depth.</p>
 
-<table data-toggle="table" data-url="/assets/json/table_data.json">
+<hr />
+
+<blockquote class="block-tip">
+  <h5 id="tldr-2"><strong>TL;DR</strong></h5>
+
+  <p><em>People often give the apology they believe is appropriate, not the one the other person is evaluating.</em></p>
+</blockquote>
+
+<hr />
+
+<h2 id="a-simple-example-that-gets-complicated-fast">A Simple Example That Gets Complicated Fast</h2>
+
+<p>Imagine this:</p>
+
+<p>Jamie makes a joke at a group dinner. It lands badly—not maliciously, but it stings. Later, they say: <em>“Hey, sorry about earlier.”</em></p>
+
+<p>That response might feel sufficient.<br />
+Or dismissive.<br />
+Or oddly hollow.</p>
+
+<p>Now add context.</p>
+
+<p>It’s not the first time. Jamie apologizes quickly—always. They don’t like revisiting things once they’ve been addressed. But they’re otherwise supportive, reliable, the person who shows up when it matters.</p>
+
+<p>At this point, the apology stops being a single event.
+It becomes part of a pattern.</p>
+
+<p>And patterns carry far more information than words.</p>
+
+<p>One apology is weak evidence. Your brain knows this, even when you wish it didn’t. What actually moves your inference is <em>repeated behavior</em>—apologies that expand over time, or ones that stay shallow no matter the stakes.</p>
+
+<p>Now flip it.</p>
+
+<p>Imagine you’re on the other side of the table. You said something careless. You know it. You apologize—quickly, because that’s how you show you care. You don’t want this to fester.</p>
+
+<p>But instead of landing, your apology opens a door you didn’t expect. Now there are questions. Follow-ups. A request to “talk about what happened.” You’re being asked to narrate your internal state, reconstruct your intent, and demonstrate understanding—on demand, in real time.</p>
+
+<p>You already felt bad.<br />
+Now you feel <strong>interrogated.</strong></p>
+
+<p>This is the <strong>reverse Jamie problem.</strong> And it’s just as real.</p>
+
+<p>Some people experience process-level repair not as care, but as an emotional audit they can never quite pass. The goalpost isn’t visible. The “right” answer keeps shifting. The conversation doesn’t feel like connection—it feels like a test with no answer key.</p>
+
+<p>That exhaustion isn’t avoidance.<br />
+It’s its own kind of <strong>hurt.</strong></p>
+
+<hr />
+
+<blockquote class="block-tip">
+  <h5 id="tldr-3"><strong>TL;DR</strong></h5>
+
+  <p><em>One apology is a data point. A pattern is a signal.</em></p>
+</blockquote>
+
+<hr />
+
+<h2 id="why-closeness-makes-this-harder-not-easier">Why Closeness Makes This Harder, Not Easier</h2>
+
+<p>There’s a common assumption that closer relationships naturally default to deeper apologies.</p>
+
+<p>Intuitively, it makes sense—more investment, more care, more willingness to go further.</p>
+
+<p>In practice, closeness mainly does one thing: <strong>it raises the cost of being wrong.</strong></p>
+
+<p>A shallow apology from a stranger is forgettable.
+The same apology from someone close feels <em>diagnostic</em>—like it’s telling you something you didn’t want to know.</p>
+
+<p>That’s because intimacy doesn’t increase certainty.<br />
+It increases <strong>stakes.</strong><br />
+<em>(Thanks, evolution.)</em></p>
+
+<p>This is where many people misfire. They interpret a mismatch in apology depth as a lack of care, when it’s often a mismatch in <em>optimization strategy</em>.</p>
+
+<p>Some people optimize for minimizing conflict duration—restoring equilibrium quickly, preventing escalation. Others optimize for shared understanding—reduced future risk, internal alignment.</p>
+
+<p>Same interaction.<br />
+<strong>Different goals.</strong></p>
+
+<p>Here’s the part that’s easy to miss: some people genuinely believe <em>conflict itself is the wound</em>—so ending it fast <em>is</em> the care. For them, a drawn-out process apology doesn’t feel connective. It feels like reopening something that should be healing.</p>
+
+<p>That doesn’t mean they’re right. It means their optimization function isn’t broken—it’s just pointing somewhere else.</p>
+
+<p>Back to Jamie.</p>
+
+<p>Jamie’s consistent, quick apologies might mean: <em>I care and want this resolved so we can move forward.</em> Or they might mean: <em>This pattern works well enough—why change it?</em></p>
+
+<p>You can’t tell from one instance.</p>
+
+<p>But you can tell from <strong>twenty.</strong></p>
+
+<p>A rough heuristic: one data point—suspend judgment. Two aligned data points—update gently. Three aligned data points across different contexts? Treat that as a stable parameter, not noise.</p>
+
+<hr />
+
+<blockquote class="block-tip">
+  <h5 id="tldr-4"><strong>TL;DR</strong></h5>
+
+  <p><em>Closeness doesn’t guarantee depth—it just makes mismatches more consequential.</em></p>
+</blockquote>
+
+<hr />
+
+<h2 id="the-parts-people-miss">The Parts People Miss</h2>
+
+<p>Up to now, this sounds pretty charitable. That’s intentional—but incomplete. There are three complications most advice skips.</p>
+
+<h3 id="1-strategy-exists">1. Strategy Exists</h3>
+
+<blockquote class="block-warning">
+  <h5 id="warning">WARNING</h5>
+
+  <p>Not all shallow apologies are preference-driven or model-mismatched. Some are <strong>strategic</strong>.</p>
+</blockquote>
+
+<p>That doesn’t mean malicious.
+It means responsive to incentives.</p>
+
+<p>If shallow apologies reliably reset the situation—end the conversation, restore access, avoid consequences—then shallow apologies are <em>efficient</em>. Over time, repeated signal-only apologies aren’t confusion.</p>
+
+<p><strong>They’re data.</strong></p>
+
+<p>Ignoring this leads to overly generous interpretations that don’t match reality.</p>
+
+<h3 id="2-capacity-vs-willingness-look-identical">2. Capacity vs. Willingness Look Identical</h3>
+
+<p>Another place people get stuck: collapsing “they <em>can’t</em>” and “they <em>won’t</em>.”</p>
+
+<p>From the outside, these look the same—discomfort with follow-up, vague wording, pressure to move on.</p>
+
+<p>But the implications are different.</p>
+
+<p>Capacity limits suggest you might need to adjust expectations.
+Willingness limits suggest you might need to make a boundary decision.</p>
+
+<p>There’s also a third possibility worth naming: they <em>can</em> go deeper but believe they <em>shouldn’t</em>. Some people avoid process-level apologies because claiming full understanding feels dishonest to them. They’re not withholding—they’re being epistemically humble about the limits of knowing another person’s experience.</p>
+
+<p>This can produce apologies that sound dismissive (“I’m sorry you felt that way”) but aren’t actually indifferent. The restraint is the point.</p>
+
+<p>And here’s the part nobody wants to admit: <strong>process apologies are expensive.</strong></p>
+
+<p>Not in a “this is hard” way—in an actual resource-depletion way. They require emotional bandwidth, cognitive load, vulnerability, and time. They’re the full cardiovascular workout of interpersonal repair.</p>
+
+<p>Signal apologies are a brisk walk to the fridge.</p>
+
+<p>Neither is wrong.</p>
+
+<p>But if you’re expecting someone to do the full workout for every minor friction, you’re going to run out of relationship before you run out of conflicts.</p>
+
+<p>This is where <strong>frequency</strong> quietly becomes the variable everyone ignores.</p>
+
+<p>If you have two serious conflicts a year, process apologies are sustainable. If you have fifty small frictions, demanding process-level repair each time is a recipe for mutual exhaustion. At some point, the math doesn’t work—not because anyone stopped caring, but because humans have finite metabolic reserves for emotional deep-dives.</p>
+
+<p>The failure mode isn’t “they won’t do the work.”</p>
+
+<p>Sometimes it’s “the work exceeds the available supply of work.”</p>
+
+<p>(This is also why some people seem to have infinite patience for repair in new relationships and none in long ones. The account got overdrawn. Interest compounded.)</p>
+
+<p>You don’t have to diagnose which is which immediately. You do have to notice which one you keep <em>assuming</em>.</p>
+
+<p>There’s a shadow version of this worth naming: <strong>process apologies can be their own kind of avoidance.</strong></p>
+
+<p>Not always. But sometimes.</p>
+
+<p>Insisting on deep processing after every friction can function as a control mechanism—keeping the other person in a permanent state of emotional accountability. “We need to talk about this” can be genuine repair. It can also be a way of never letting something be <em>finished</em>.</p>
+
+<p>The person demanding depth isn’t always seeking understanding.
+Sometimes they’re seeking reassurance that can’t be permanently given.
+Sometimes the processing <em>is</em> the problem—not because they’re wrong to want it, but because no amount of it will ever feel like enough.</p>
+
+<p>If signal apologies can be strategic, process apologies can be compulsive.</p>
+
+<p>Both failure modes exist.
+Most advice only names one.</p>
+
+<h3 id="3-power-changes-the-math">3. Power Changes the Math</h3>
+
+<blockquote class="block-danger">
+  <h5 id="danger">DANGER</h5>
+
+  <p>All of this becomes more complicated when <strong>risks aren’t equal</strong>.</p>
+</blockquote>
+
+<p>Consider: an employee raising a concern with a manager. A partner who’s more emotionally invested than the other. A friend who needs the relationship more.</p>
+
+<p>In unequal dynamics, signal apologies often function as containment tools—not maliciously, but structurally. The person with less power may not be able to safely push for clarity, even when they need it.</p>
+
+<p>The framework still applies. But inference happens under unequal risk, and “just communicate better” advice tends to collapse here.</p>
+
+<p>Jamie, it turns out, sets the emotional pace in most of your interactions.
+(You’ve probably noticed this already. It’s why you’re reading this article.)</p>
+
+<p>You’re often the one adapting.</p>
+
+<p>That doesn’t mean they don’t care.
+It does mean the cost of pressing for more falls disproportionately on you.</p>
+
+<hr />
+
+<blockquote class="block-tip">
+  <h5 id="tldr-5"><strong>TL;DR</strong></h5>
+
+  <p><em>Strategy, capacity, and power all shape what apologies mean—and what’s safe to ask for.</em></p>
+</blockquote>
+
+<hr />
+
+<h2 id="the-reframe-that-actually-helps">The Reframe That Actually Helps</h2>
+
+<p>Here’s the shift that makes this framework practical instead of just interesting:</p>
+
+<p><strong>An apology isn’t a verdict. It’s a data point.</strong></p>
+
+<p>It doesn’t answer: <em>Do they care?</em></p>
+
+<p>It updates: <em>How likely is it that they understand in the way that matters here?</em></p>
+
+<p>And here’s the quieter update that often hurts more:</p>
+
+<blockquote>
+  <p><em>How likely is it that we’re even playing the same game?</em></p>
+</blockquote>
+
+<p>Your discomfort after a hollow apology often isn’t about the apology itself.</p>
+
+<p>It’s your estimate of shared relational assumptions drifting downward.</p>
+
+<p>That’s a different kind of loss.</p>
+
+<p>Once you see that, a few things shift:</p>
+
+<ul>
+  <li>Discomfort after an apology often signals insufficient information, not ingratitude</li>
+  <li>The question changes from “Did they mean it?” to “What does the pattern suggest?”</li>
+  <li>Your unease might be tracking something real—a growing sense that you’re not playing the same game</li>
+</ul>
+
+<p>This doesn’t mean turning every apology into an audit. Interpretation itself has a cost. There’s a failure mode where you never let anything settle, treating every word as evidence to be weighed. That’s not insight—it’s anxiety with spreadsheets. (I have personally filed these spreadsheets. They are not helpful.)</p>
+
+<p>The goal isn’t maximum analysis.</p>
+
+<p>It’s <strong>accurate inference, over time.</strong></p>
+
+<hr />
+
+<blockquote class="block-tip">
+  <h5 id="tldr-6"><strong>TL;DR</strong></h5>
+
+  <p><em>Apologies are forecasts, not guarantees. Treat them accordingly.</em></p>
+</blockquote>
+
+<hr />
+
+<h2 id="the-part-where-psychology-gets-uncomfortably-relevant">The Part Where Psychology Gets Uncomfortably Relevant</h2>
+
+<p>If the reframe above clicked, this next part will explain why it’s so hard to actually apply.</p>
+
+<p>If you’ve been nodding along thinking “this explains that one person,” congratulations: you’ve arrived at the attachment theory portion of our program.</p>
+
+<p>(Don’t worry. We’re not turning this into astrology. Unless you’re a Gemini. Just kidding. Brief detour, then back to earth.)</p>
+
+<p>People don’t enter conflicts neutrally. They bring priors—not just about this argument, but about what conflict <em>means</em>.</p>
+
+<p>Some people grew up learning: <em>closeness is fragile. If I don’t get confirmation that we’re okay, we might not be okay. Ambiguity is dangerous.</em></p>
+
+<p>Others learned: <em>conflict is engulfment. The longer this goes, the more I lose myself. Distance is safety.</em></p>
+
+<p>These aren’t conscious beliefs. They’re the background operating system that processes apologies before the words even land.</p>
+
+<p>So the same apology—same words, same tone, same timing—can feel:</p>
+
+<ul>
+  <li>Like abandonment to one person (“They didn’t go deep enough; do they even care?”)</li>
+  <li>Like a reasonable close to another (“I acknowledged it; why are we still here?”)</li>
+</ul>
+
+<p>Neither is imagining things.
+They’re just running different firmware.</p>
+
+<p>This is annoying, because it means the question “Was that apology good enough?” doesn’t have a context-free answer. It depends on what each person’s nervous system is scanning for.</p>
+
+<p>Jamie’s quick apologies might genuinely feel complete to Jamie—not because Jamie doesn’t care, but because Jamie’s system registers “conflict acknowledged, threat neutralized, return to baseline.” Meanwhile, your system is still running: “But did they <em>understand</em>? Is it <em>safe</em> now?”</p>
+
+<p><strong>Two different threat models.</strong><br />
+<strong>Same room.</strong></p>
+
+<p>And here’s what gets lost in most writing about this (including, until this paragraph, this one): Jamie’s experience of that mismatch isn’t neutral either.</p>
+
+<p>If your system reads their quick apology as abandonment, their system may read your need for processing as an escalation threat. You feel uncared for. They feel unsafe. You’re both scanning for danger—just in opposite directions.</p>
+
+<p>The person who closes quickly isn’t always fleeing.<br />
+Sometimes they’re <strong>protecting</strong>—themselves, the relationship, the fragile peace they’ve worked to build.</p>
+
+<p>That protection can look like indifference from the outside.<br />
+From the inside, it often feels like <strong>survival.</strong></p>
+
+<p>This doesn’t make mismatches less painful. It makes them more symmetrical than they appear.</p>
+
+<p>The practical upshot: if you keep having the same fight about apologies, you might not be disagreeing about words. You might be disagreeing about what repair <em>is</em>.</p>
+
+<p>That’s harder to fix.<br />
+Also <strong>more useful to know.</strong></p>
+
+<hr />
+
+<h2 id="the-error-tradeoff-most-people-never-name">The Error Tradeoff Most People Never Name</h2>
+
+<p>Underneath all of this is a tradeoff people rarely articulate—and it maps directly onto those different firmware versions.</p>
+
+<p>What I eventually realized was going on in my head, even before I could name it:</p>
+
+<p>I was afraid of believing Jamie understood when Jamie didn’t.</p>
+
+<p>That’s one kind of mistake.</p>
+
+<p>Some people are most afraid of <strong>believing someone understands when they don’t.</strong></p>
+
+<p>Others are most afraid of <strong>missing real care because it didn’t arrive in the expected form.</strong></p>
+
+<p>In statistics, these are called false positives and false negatives.
+In relationships, they’re called <em>resentment</em> and <em>loneliness</em>.</p>
+
+<table>
   <thead>
     <tr>
-      <th data-field="id">ID</th>
-      <th data-field="name">Item Name</th>
-      <th data-field="price">Item Price</th>
+      <th style="text-align: left">Error Type</th>
+      <th style="text-align: left">In Your Relationship</th>
+      <th style="text-align: left">The Regret</th>
     </tr>
   </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>False Positive</strong></td>
+      <td style="text-align: left">Believing they understand when they don’t</td>
+      <td style="text-align: left">Resentment (stayed too long)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>False Negative</strong></td>
+      <td style="text-align: left">Missing real care in unexpected form</td>
+      <td style="text-align: left">Loneliness (left too early)</td>
+    </tr>
+  </tbody>
 </table>
 
 <p></p>
 
-<p>By using <a href="https://bootstrap-table.com/">Bootstrap Table</a> it is possible to create pretty complex tables, with pagination, search, and more. For example, the following HTML code will display a table, loaded from a JSON file, with pagination, search, checkboxes, and header/content alignment. For more information, check the <a href="https://examples.bootstrap-table.com/index.html">documentation</a>.</p>
+<p>Neither mistake is irrational.
+They just optimize for different regrets.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table</span>
-  <span class="na">data-click-to-select=</span><span class="s">"true"</span>
-  <span class="na">data-height=</span><span class="s">"460"</span>
-  <span class="na">data-pagination=</span><span class="s">"true"</span>
-  <span class="na">data-search=</span><span class="s">"true"</span>
-  <span class="na">data-toggle=</span><span class="s">"table"</span>
-  <span class="na">data-url=</span><span class="s">"{{ '/assets/json/table_data.json' | relative_url }}"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;thead&gt;</span>
-    <span class="nt">&lt;tr&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-checkbox=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"id"</span> <span class="na">data-halign=</span><span class="s">"left"</span> <span class="na">data-align=</span><span class="s">"center"</span> <span class="na">data-sortable=</span><span class="s">"true"</span><span class="nt">&gt;</span>ID<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"name"</span> <span class="na">data-halign=</span><span class="s">"center"</span> <span class="na">data-align=</span><span class="s">"right"</span> <span class="na">data-sortable=</span><span class="s">"true"</span><span class="nt">&gt;</span>Item Name<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"price"</span> <span class="na">data-halign=</span><span class="s">"right"</span> <span class="na">data-align=</span><span class="s">"left"</span> <span class="na">data-sortable=</span><span class="s">"true"</span><span class="nt">&gt;</span>Item Price<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;/thead&gt;</span>
-<span class="nt">&lt;/table&gt;</span>
-</code></pre></div></div>
+<p>The question worth asking isn’t <em>“Who’s right about the apology?”</em></p>
 
-<table data-click-to-select="true" data-height="460" data-pagination="true" data-search="true" data-toggle="table" data-url="/assets/json/table_data.json">
+<p>It’s:</p>
+
+<blockquote>
+  <p><em>Which error am I more likely to regret here?</em></p>
+</blockquote>
+
+<p>That doesn’t give you an answer.</p>
+
+<p>But it gives you a better question—one that’s actually about your situation, not about apologies in the abstract.</p>
+
+<hr />
+
+<blockquote class="block-tip">
+  <h5 id="tldr-7"><strong>TL;DR</strong></h5>
+
+  <p><em>You’re not choosing between trust and boundaries. You’re choosing which mistake you can live with.</em></p>
+</blockquote>
+
+<details><summary><strong>For the probability nerds: the Bayesian frame</strong></summary>
+<h3 id="the-core-question">The Core Question</h3>
+
+<p>When someone apologizes, you’re implicitly asking: <em>“Given what I just observed, how likely is it that they actually understand?”</em></p>
+
+<p>Let’s call this \(P(U \mid A)\)—the probability of genuine <strong>U</strong>nderstanding given the <strong>A</strong>pology you observed.</p>
+
+<h3 id="building-the-model">Building the Model</h3>
+
+<p><strong>Step 1: The Basic Update</strong></p>
+
+<p>Bayes’ theorem tells us how to update beliefs given new evidence:</p>
+
+\[P(U \mid A) = \frac{P(A \mid U) \cdot P(U)}{P(A)}\]
+
+<p>In plain English:</p>
+
+<ul>
+  <li>\(P(U)\) = Your <strong>prior belief</strong> they understand (before this apology)</li>
+  <li>\(P(A \mid U)\) = How likely is this apology <em>if</em> they truly understand?</li>
+  <li>\(P(A \mid \neg U)\) = How likely is this apology <em>if</em> they don’t understand?</li>
+  <li>\(P(A)\) = How likely is this apology in general?</li>
+</ul>
+
+<p><strong>Step 2: Why Words Alone Are Weak Evidence</strong></p>
+
+<p>The key insight is the <strong>likelihood ratio</strong>:</p>
+
+\[\text{LR} = \frac{P(A \mid U)}{P(A \mid \neg U)}\]
+
+<p>If someone can easily say “I’m sorry” whether or not they understand, then \(P(A \mid U) \approx P(A \mid \neg U)\), and \(\text{LR} \approx 1\).</p>
+
+<p>A likelihood ratio of 1 means: <em>this evidence doesn’t move your beliefs at all.</em></p>
+
+<table>
   <thead>
     <tr>
-      <th data-checkbox="true"></th>
-      <th data-field="id" data-halign="left" data-align="center" data-sortable="true">ID</th>
-      <th data-field="name" data-halign="center" data-align="right" data-sortable="true">Item Name</th>
-      <th data-field="price" data-halign="right" data-align="left" data-sortable="true">Item Price</th>
+      <th style="text-align: left">Evidence Type</th>
+      <th style="text-align: center">Likelihood Ratio</th>
+      <th style="text-align: left">Belief Update</th>
     </tr>
   </thead>
-</table>]]></content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="tables" /><summary type="html"><![CDATA[an example of how to use Bootstrap Tables]]></summary></entry><entry><title type="html">a post with table of contents</title><link href="/blog/2023/table-of-contents/" rel="alternate" type="text/html" title="a post with table of contents" /><published>2023-03-20T11:59:00-04:00</published><updated>2023-03-20T11:59:00-04:00</updated><id>/blog/2023/table-of-contents</id><content type="html" xml:base="/blog/2023/table-of-contents/"><![CDATA[<p>This post shows how to add a table of contents in the beginning of the post.</p>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Formulaic “I’m sorry”</td>
+      <td style="text-align: center">~1.0</td>
+      <td style="text-align: left">Almost none</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Accurate paraphrase of harm</td>
+      <td style="text-align: center">~3-5</td>
+      <td style="text-align: left">Moderate</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Behavior change weeks later</td>
+      <td style="text-align: center">~10+</td>
+      <td style="text-align: left">Strong</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Unprompted follow-up</td>
+      <td style="text-align: center">~5-10</td>
+      <td style="text-align: left">Strong</td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="adding-a-table-of-contents">Adding a Table of Contents</h2>
+<h3 id="adding-complexity-the-full-model">Adding Complexity: The Full Model</h3>
 
-<p>To add a table of contents to a post, simply add</p>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">toc</span><span class="pi">:</span>
-  <span class="na">beginning</span><span class="pi">:</span> <span class="kc">true</span>
-</code></pre></div></div>
-<p>to the front matter of the post. The table of contents will be automatically generated from the headings in the post.</p>
+<p>The article discussed several factors. Let’s formalize them.</p>
 
-<h3 id="example-of-sub-heading-1">Example of Sub-Heading 1</h3>
+<p><strong>Factor 1: Apology Type</strong></p>
 
-<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>
+<p>Let \(T \in \{\text{Signal}, \text{Process}\}\) represent the apology type. We actually care about:</p>
 
-<h3 id="example-of-another-sub-heading-1">Example of another Sub-Heading 1</h3>
+\[P(U \mid A, T) = \frac{P(A \mid U, T) \cdot P(U \mid T)}{P(A \mid T)}\]
 
-<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>
+<p>Process apologies are <em>harder to fake</em>, so:</p>
 
-<h2 id="table-of-contents-options">Table of Contents Options</h2>
+<ul>
+  <li>
+\[P(A_{\text{deep}} \mid U, T_{\text{Process}}) \gg P(A_{\text{deep}} \mid \neg U, T_{\text{Process}})\]
+  </li>
+</ul>
 
-<p>If you want to learn more about how to customize the table of contents, you can check the <a href="https://github.com/toshimaru/jekyll-toc">jekyll-toc</a> repository.</p>
+<p>This is why process apologies carry more information—the likelihood ratio is much higher.</p>
 
-<h3 id="example-of-sub-heading-2">Example of Sub-Heading 2</h3>
+<p><strong>Factor 2: Patterns Over Time</strong></p>
 
-<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>
+<p>With \(n\) independent observations \(A_1, A_2, \ldots, A_n\):</p>
 
-<h3 id="example-of-another-sub-heading-2">Example of another Sub-Heading 2</h3>
+\[P(U \mid A_1, \ldots, A_n) \propto P(U) \cdot \prod_{i=1}^{n} \frac{P(A_i \mid U)}{P(A_i \mid \neg U)}\]
 
-<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>]]></content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="toc" /><summary type="html"><![CDATA[an example of a blog post with table of contents]]></summary></entry><entry><title type="html">a post with giscus comments</title><link href="/blog/2022/giscus-comments/" rel="alternate" type="text/html" title="a post with giscus comments" /><published>2022-12-10T10:59:00-05:00</published><updated>2022-12-10T10:59:00-05:00</updated><id>/blog/2022/giscus-comments</id><content type="html" xml:base="/blog/2022/giscus-comments/"><![CDATA[<p>This post shows how to add GISCUS comments.</p>]]></content><author><name></name></author><category term="sample-posts" /><category term="external-services" /><category term="comments" /><summary type="html"><![CDATA[an example of a blog post with giscus comments]]></summary></entry></feed>
+<p>If each shallow apology has \(\text{LR} = 0.8\) (slight evidence <em>against</em> understanding), then after 10 observations:</p>
+
+\[\text{Combined LR} = 0.8^{10} \approx 0.11\]
+
+<p>Your belief in genuine understanding drops by ~90%. <strong>Patterns compound.</strong></p>
+
+<p><strong>Factor 3: The Strategy Discount</strong></p>
+
+<p>When someone has <em>incentives</em> to apologize strategically, we need:</p>
+
+\[P(A \mid \neg U, \text{Strategic}) &gt; P(A \mid \neg U, \text{Non-strategic})\]
+
+<p>Strategic apologizers are more likely to produce apology \(A\) even without understanding—so the same words become <em>weaker</em> evidence. This is why context matters: an apology after you’ve threatened consequences is less informative than an unprompted one.</p>
+
+<p><strong>Factor 4: Power Dynamics</strong></p>
+
+<p>Define \(\text{Power}_{\text{them}} &gt; \text{Power}_{\text{you}}\). In this case:</p>
+
+\[P(\text{You push for clarity} \mid \text{Power imbalance}) \ll P(\text{You push for clarity} \mid \text{Equal power})\]
+
+<p>This doesn’t change what apologies <em>mean</em>—it changes what apologies you get to <em>observe</em>. Your data is censored by power, which biases your estimates.</p>
+
+<h3 id="the-decision-problem">The Decision Problem</h3>
+
+<p>You’re not just estimating \(P(U \mid A)\). You’re making a <strong>decision</strong> under uncertainty.</p>
+
+<p>Let:</p>
+
+<ul>
+  <li>\(C_{\text{FP}}\) = Cost of a <strong>false positive</strong> (believing they understand when they don’t → resentment, wasted time)</li>
+  <li>\(C_{\text{FN}}\) = Cost of a <strong>false negative</strong> (believing they don’t care when they do → lost relationship, loneliness)</li>
+</ul>
+
+<p>The optimal threshold \(\tau\) for “trust” satisfies:</p>
+
+\[\tau^* = \frac{C_{\text{FN}}}{C_{\text{FP}} + C_{\text{FN}}}\]
+
+<p>If you weight \(C_{\text{FP}}\) heavily (fear of resentment), you need <em>more</em> evidence before trusting—higher \(\tau\).<br />
+If you weight \(C_{\text{FN}}\) heavily (fear of loneliness), you trust with <em>less</em> evidence—lower \(\tau\).</p>
+
+<p><strong>Neither is irrational. They’re different loss functions.</strong></p>
+
+<h3 id="the-takeaway">The Takeaway</h3>
+
+<p>Your brain is doing approximate Bayesian inference whether you like it or not. The framework just makes explicit:</p>
+
+<ol>
+  <li><strong>Single apologies are weak evidence</strong> (low likelihood ratios)</li>
+  <li><strong>Patterns multiply</strong> (repeated observations compound)</li>
+  <li><strong>Context matters</strong> (strategy and power affect the likelihood ratio)</li>
+  <li><strong>Your threshold is personal</strong> (different people weight errors differently)</li>
+</ol>
+
+<p>The “off” feeling after a hollow apology? That’s your posterior probability dropping. You’re not being ungrateful—you’re being <em>Bayesian</em>.</p>
+
+</details>
+
+<hr />
+
+<h2 id="putting-it-all-together-ideally-on-a-napkin">Putting It All Together (Ideally on a Napkin)</h2>
+
+<p>If we were to map this entire messy algorithm—from the “off” feeling to the final decision—it looks something like this. Note the final diamond; that’s the part usually left out of polite advice.</p>
+
+<pre><code class="language-mermaid">graph TD
+    A([Apology Received]) --&gt; B{Does it feel resolved?}
+    B -- Yes --&gt; C([Restored])
+    B -- No --&gt; D{Is this a&lt;br/&gt;Pattern?}
+    D -- "No / First Time" --&gt; E["Suspend Judgment&lt;br/&gt;(One data point is noise)"]
+    D -- Yes --&gt; F{Diagnose the Cause}
+
+    F --&gt;|Different OS| G[Mistranslation]
+    F --&gt;|Capacity| H["They Can't"]
+    F --&gt;|Willingness| I["They Won't"]
+
+    G --&gt; J[Translate Signal]
+    H --&gt; K[Lower Expectation]
+    I --&gt; L[Set Boundary]
+
+    J &amp; K &amp; L --&gt; M{"The Final Calculus:&lt;br/&gt;Is the updated relationship&lt;br/&gt;worth the toll?"}
+
+    M -- Yes --&gt; N["Accept &amp; Adapt"]
+    M -- No --&gt; O["Distance / Exit"]
+
+    style M fill:#f9f,stroke:#333,stroke-width:2px
+</code></pre>
+
+<hr />
+
+<h2 id="the-toll-vs-value-calculus">The “Toll vs. Value” Calculus</h2>
+
+<p>That pink diamond at the bottom is where the real work happens.</p>
+
+<p>Once you realize Jamie <em>can’t</em> apologize deeply (capacity) or is just optimizing for speed (mismatch), you have to update your model. You stop expecting a cat to bark. (Or a goldfish to do your taxes.)</p>
+
+<p>But that leads to a much harder question:</p>
+
+<p><strong>How much do I actually want a cat?</strong></p>
+
+<p>This is the mental health tax calculation.</p>
+
+<p>Every relationship has a “toll”—the energy required to bridge gaps, translate signals, and manage disappointments.</p>
+
+<p>Every relationship also has a “value”—the joy, support, history, and connection provided.</p>
+
+<p>If you update your expectations (lowering the toll of disappointment) but the relationship <em>still</em> costs more energy than it returns, purely because you’re exhausted by the translation work… then the update didn’t fix the problem.</p>
+
+<p>It just clarified it.</p>
+
+<hr />
+
+<h4 id="the-relationship-quadrants">The Relationship Quadrants</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left"><strong>Low Toll</strong></th>
+      <th style="text-align: left"><strong>High Toll</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>High Value</strong></td>
+      <td style="text-align: left">🌟 <strong>The Sweet Spot</strong> <br /> <em>Easy connection, deep rewards</em></td>
+      <td style="text-align: left">💔 <strong>The Tragedy Zone</strong> <br /> <em>We love each other, but we exhaust each other</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Low Value</strong></td>
+      <td style="text-align: left">🤝 <strong>Functional</strong> <br /> <em>Pleasant acquaintances</em></td>
+      <td style="text-align: left">🚪 <strong>The Exit Zone</strong> <br /> <em>Why am I working this hard?</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p></p>
+
+<hr />
+
+<p>The “sophisticated” move isn’t just understanding why they apologize poorly. It’s deciding if the person, <em>flaws included</em>, is “profitable” to your life in the least capitalistic, most emotional sense of the word.</p>
+
+<p>Sometimes the answer is yes. Jamie is hilarious and loyal, so you pay the “shallow apology tax” and move on.</p>
+
+<p>Sometimes the answer is no. And that’s not because they’re a villain.</p>
+
+<p>It’s just because the rent is too damn high.</p>
+
+<hr />
+
+<h2 id="so-what-should-an-apology-do">So What Should an Apology Do?</h2>
+
+<p>There isn’t a universal script.</p>
+
+<p>That’s the part most advice skips.</p>
+
+<p>A reasonable expectation looks more like this:</p>
+
+<p><strong>An apology should do enough work for the kind of harm and relationship involved.</strong></p>
+
+<p>Remember the four components from earlier—acknowledge, accept responsibility, express remorse, commit to change? Signal apologies cover the first two. Process apologies require all four, with real weight on the last two.</p>
+
+<p>Signal-based apologies are often sufficient for low-stakes, transactional, or professional contexts. Process-based apologies become necessary as harm, intimacy, repetition, or power imbalance increases.</p>
+
+<p>What matters most isn’t eloquence.</p>
+
+<p>It’s whether <strong><em>behavior over time</em></strong> supports the inference the apology asks you to make.</p>
+
+<p>Jamie—if we’re still keeping track—might never give you the kind of apology you’d find most reassuring. That’s real. The question <em>isn’t</em> whether you can demand a different version. It’s whether the relationship, pattern included, is one you want to be in.</p>
+
+<p>That’s not a question about apologies anymore.</p>
+
+<p>It’s a question about what you’re willing to infer—and live with.</p>
+
+<hr />
+
+<blockquote class="block-tip">
+  <h5 id="tldr-8"><strong>TL;DR</strong></h5>
+
+  <p><em>“What counts” depends on context and patterns—not a single sentence.</em></p>
+</blockquote>
+
+<hr />
+
+<h2 id="the-takeaway-thats-easy-to-miss">The Takeaway That’s Easy to Miss</h2>
+
+<p>Feeling unsettled after an apology isn’t a character flaw.</p>
+
+<p>It’s often your intuition noticing insufficient information.</p>
+
+<p>Apologies aren’t proof.
+They’re not promises.
+They’re not closure.</p>
+
+<p>They’re data points offered under uncertainty—risk management in a system where intent is latent, language is lossy, and incentives are misaligned.</p>
+
+<p>The real skill isn’t demanding better apologies. It’s learning how to interpret them accurately—without self-erasure, and without paranoia. Noticing patterns. Naming the tradeoffs. Asking better questions than “did they mean it.”</p>
+
+<p>That doesn’t make relationships easier.</p>
+
+<p>It makes them <strong><em>legible.</em></strong></p>
+
+<p>And legibility, inconvenient as it is, tends to be <strong>cheaper than the alternative.</strong></p>
+
+<hr />
+
+<p><em>Closure for one person can be erasure for another. The trick is learning which one you’re being offered—and deciding whether it’s enough.</em></p>]]></content><author><name></name></author><category term="essays" /><category term="psychology" /><category term="communication" /><category term="relationships" /><summary type="html"><![CDATA[When an apology feels empty, it's usually because it answered a different question than the one you were asking. A framework for understanding why some apologies land and others don't.]]></summary></entry></feed>
