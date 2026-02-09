@@ -13,11 +13,23 @@ graph TD
     G --> J[Translate Signal]
     H --> K[Lower Expectation]
     I --> L[Set Boundary]
+    
+    J & K & L --> P{Check Your Filter:<br/>Is your threshold<br/>calibrated for *this* person?}
 
-    J & K & L --> M{"The Final Calculus:<br/>Is the updated relationship<br/>worth the toll?"}
+    P -- "Possibly drifted" --> Q["Recalibrate:<br/>Separate this person's data<br/>from accumulated hurt"]
+    Q --> F
+    P -- "Calibrated" --> M
+
+    J[Translate Signal]
+    K[Lower Expectation]
+    L[Set Boundary]
+
+    M{"The Final Calculus:<br/>Is the updated relationship<br/>worth the toll?"}
 
     M -- Yes --> N["Accept & Adapt"]
     M -- No --> O["Distance / Exit"]
 
     classDef decision fill:#ffb6c1,stroke:#c71585,stroke-width:2px,color:#333
+    classDef calibration fill:#fff3cd,stroke:#d4a017,stroke-width:2px,color:#333
     class M decision
+    class P calibration
