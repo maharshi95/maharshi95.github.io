@@ -1,0 +1,23 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#f0f0f0', 'primaryTextColor': '#333', 'primaryBorderColor': '#666', 'lineColor': '#666', 'secondaryColor': '#e8e8e8', 'tertiaryColor': '#fff'}}}%%
+graph TD
+    A([Apology Received]) --> B{Does it feel resolved?}
+    B -- Yes --> C([Restored])
+    B -- No --> D{Is this a<br/>Pattern?}
+    D -- "No / First Time" --> E["Suspend Judgment<br/>(One data point is noise)"]
+    D -- Yes --> F{Diagnose the Cause}
+
+    F -->|"Attachment<br/>Mismatch"| G[Mistranslation]
+    F -->|Capacity| H["They Can't"]
+    F -->|Willingness| I["They Won't"]
+
+    G --> J[Translate Signal]
+    H --> K[Lower Expectation]
+    I --> L[Set Boundary]
+
+    J & K & L --> M{"The Final Calculus:<br/>Is the updated relationship<br/>worth the toll?"}
+
+    M -- Yes --> N["Accept & Adapt"]
+    M -- No --> O["Distance / Exit"]
+
+    classDef decision fill:#ffb6c1,stroke:#c71585,stroke-width:2px,color:#333
+    class M decision
